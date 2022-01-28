@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ProductDetail from './containers/ProductDetail';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -12,6 +12,7 @@ import { GET_PRODUCT } from './graphql/queries/getProduct';
 
 const App = () => {
     const { data, loading, error } = useQuery(GET_PRODUCT);
+    const [cart, setCart] = useState([])
 
     if (loading) {
         return <h1>The data is loading..</h1>
@@ -30,7 +31,8 @@ const App = () => {
                     element={
                         <ProductDetail
                             product={product}
-                            id={product.id} />
+                            id={product.id}
+                            setCart={setCart} />
                     }
                 />
             </Routes>

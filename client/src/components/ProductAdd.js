@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-function ProductAdd({ product }) {
+function ProductAdd({ product, setCart }) {
     const { price } = product;
-    const [cart, setCart] = useState([])
+    
     const [quantity, setQuantity] = useState(1);
 
     const decrement = () => {

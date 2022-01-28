@@ -5,14 +5,14 @@ import ProductDescription from '../components/ProductDescription';
 import ProductSpecification from '../components/ProductSpecification';
 import PropTypes from 'prop-types';
 
-function ProductDetail({ product }) {
+function ProductDetail({ product, setCart }) {
 
     return (
         <div className="product-detail">
             <div className="container-lg">
                 <ProductHero product={product} />
                 <div className="side-layout">
-                    <ProductAdd product={product} />
+                    <ProductAdd product={product} setCart={setCart} />
                     <ProductDescription product={product} />
                     <ProductSpecification product={product} />
                 </div>
