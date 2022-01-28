@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductDetail from './containers/ProductDetail';
-import Footer from './Footer';
-import Header from './Header';
+import Footer from './components/Footer';
+import Header from './components/Header';
 import {
     Routes,
     Route

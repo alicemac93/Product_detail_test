@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from './assets/logo.svg';
-import basket from './assets/basket.svg';
+import logo from '../assets/logo.svg';
+import basket from '../assets/basket.svg';
 import { Link } from "react-router-dom";
 
 function Header() {
