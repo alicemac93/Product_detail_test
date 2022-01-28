@@ -1,0 +1,234 @@
+@font-face {
+  font-family: "Gotham SSm A";
+  src: url('./assets/Gotham-Font/GothamBook.ttf');
+}
+
+@font-face {
+  font-family: "Gotham SSm B";
+  src: url('./assets//Gotham-Font/GothamBold.ttf')
+}
+
+// color variables
+$bg-primary: #100030; //dark
+$bg-secondary: #180048; //light
+$btn-primary: #CB0F63;
+$white: #fff;
+$shuttle-gray: #5c6270;
+
+// Breakpoints
+$phone: 576px;
+$tablet: 768px;
+$laptop: 992px;
+$desktop: 1200px;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gotham SSm A','Gotham SSm B',helvetica,arial,sans-serif;
+  margin: 0;
+  background-color: $bg-primary;
+}
+
+// general classes
+.bg-light {
+  background-color: $bg-secondary;
+}
+.bg-dark {
+  background-color: $bg-primary;
+}
+.small-text {
+  color: $shuttle-gray;
+  font-size: 12px;
+}
+.spacer {
+  height: 10px;
+}
+.bold {
+  font-family: "Gotham SSm B";
+}
+// these button could be used as styled component potentially
+.button--pink-glass {
+  position: relative;
+  display: inline-block;
+  padding: 10px 75px;
+  background-color: $btn-primary;
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 100;
+  border-radius: 5px;
+  box-shadow: 0px 1px 4px -2px #333;
+  border: none;
+  margin: 10px auto;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50%;
+    border-radius: 5px;
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.2));
+  }
+}
+.button-qty {
+  height: 30px;
+  width: 25px;
+  border: none;
+  background-color: #1e2a46;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 3px;
+  font-weight: 700;
+
+  &:hover {
+    background-color: #344875;
+  }
+}
+
+.app-container {
+  height: 100%;
+}
+
+.main-content {
+  padding-top: 45px; // to offset the header
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: $bg-primary;
+  z-index: 10;
+}
+
+.header__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-container {
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.product-detail {
+  color: $white;
+  font-weight: 700;
+  line-height: 1.2;
+
+  &-section {
+    padding: 20px 0;
+
+    &--heading {
+      margin-bottom: 15px;
+      font-family: "Gotham SSm B";
+    }
+
+    &--text {
+      font-size: 12px;
+    }
+
+    &--image-hero {
+      height: 300px;
+      margin: 0 auto;
+    }
+
+    //ProductHero section
+    .hero-top {
+      display: flex;
+      justify-content: center;
+    }
+    .hero-bottom {
+      margin-top: -30px;
+      padding-top: 35px;
+      padding-bottom: 20px;
+    }
+    .hero-h1 {
+      font-family: "Gotham SSm B";
+      margin: 10px 0;
+    }
+    // ProductAdd section
+    .add-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .quantity-selection-wrapper {
+      width: 80px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      &::before {
+        content: "QTY";
+        position: absolute;
+        top: -18px;
+        left: 25px;
+        color: $shuttle-gray;
+        font-size: 12px;
+      }
+    }
+  }
+  .add {
+    text-align: center;
+  }
+}
+
+footer {
+  background-color: $bg-secondary;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+
+  .footer__container {
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .product-detail {
+    background-color: $bg-secondary;
+    border: $shuttle-gray solid 0.5px;
+    margin: 10px;
+  }
+
+  .side-layout {
+    display: flex;
+    flex-direction: column-reverse;
+    & > * {
+      background-color: $bg-secondary;
+    }
+  }
+  .add {
+    max-width: 320px;
+  }
+  .container-lg {
+    display:flex;
+    flex: 1;
+    flex-wrap: wrap;
+    max-height: 500px;
+
+    & > * {
+      width: 50%;
+      background-color: $bg-secondary;
+    }
+  }
+  footer {
+    bottom: 0;
+  }
+}
